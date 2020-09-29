@@ -1,0 +1,86 @@
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./ChartLib/css/Chart.css?ver=1">
+
+</head>
+<body>
+<script type="text/javascript" src="./ChartLib/js/Chart.js" charset="UTF-8"></script>
+<script type="text/javascript" src="./VideoLib/js/Video.js"></script>
+<!-- 2018.01.11 by 원준 : 프로그램 테스트를 위한 버튼 -->
+<script async="" src="//www.google-analytics.com/analytics.js"></script>
+<script src="https://www.chartjs.org/dist/2.7.3/Chart.bundle.js"></script>
+<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<canvas id="bar" width="300" height="300"></canvas>
+<canvas id="pie" width="300" height="300"></canvas>
+<canvas id="line" width="400" height="300"></canvas>
+
+<div>
+<div style="position: absolute;">
+<div style="position: relative; top: 0px; left: 0px;">
+<canvas id="heatMap" width="500" height="300"></canvas>
+</div>
+</div>
+<img src="ChartLib/resource/image.jpg"></img>
+</div>
+
+<form>
+<div class="slidecontainer">
+<input type="range" min="0" max="5" value="0" class="slider" id="myRange" name="slider">
+<input class="result" name="result" id="myResult" size=5>
+</div>
+</form>
+
+<script>
+// 입력될 데이터값
+var barRawData = {"chart":{"caption":"Bar Chart"}, 
+	"data":[{"label": "A", "value": "150"},{"label": "B", "value": "200"},{"label": "C", "value": "160"}]}
+
+var pieRawData = {"chart":{"caption":"Pie Chart"}, 
+	"data":[{"label": "A", "value": "150"},{"label": "B", "value": "200"},{"label": "C", "value": "160"}]}
+
+var lineRawData = {"chart":{"caption":"Line Chart"}, 
+	"data":[
+	{"label": "A", "value": "15", "time":"20180120132010"},
+	{"label": "B", "value": "10", "time":"20180120132010"},
+	{"label": "C", "value": "8", "time":"20180120132010"}]}
+
+
+var heatMapRawData = {"chart":{"caption":"HeatMap Chart"}, 
+	"data":[
+	{"label":"man", "x": "50", "y": "30", "width" : "30", "height" : "40", "time":"20180120022010"},
+	{"label":"man", "x": "50", "y": "25", "width" : "30", "height" : "40", "time":"20180120012010"},
+	{"label":"man", "x": "50", "y": "20", "width" : "30", "height" : "40", "time":"20180120032010"},
+	{"label":"man", "x": "50", "y": "15", "width" : "30", "height" : "40", "time":"20180120022010"},
+	{"label":"man", "x": "50", "y": "10", "width" : "30", "height" : "40", "time":"20180120012010"},
+
+	{"label":"man", "x": "40", "y": "30", "width" : "30", "height" : "40", "time":"20180120042010"},
+	{"label":"man", "x": "40", "y": "25", "width" : "30", "height" : "40", "time":"20180120052010"},
+	{"label":"man", "x": "40", "y": "20", "width" : "30", "height" : "40", "time":"20180120052010"},
+	{"label":"man", "x": "40", "y": "15", "width" : "30", "height" : "40", "time":"20180120062010"},
+	{"label":"man", "x": "40", "y": "10", "width" : "30", "height" : "40", "time":"20180120062010"},
+
+	{"label":"man", "x": "30", "y": "30", "width" : "30", "height" : "40", "time":"20180120082010"},
+	{"label":"man", "x": "30", "y": "25", "width" : "30", "height" : "40", "time":"20180120102010"},
+	{"label":"man", "x": "30", "y": "20", "width" : "30", "height" : "40", "time":"20180120092010"},
+	{"label":"man", "x": "30", "y": "15", "width" : "30", "height" : "40", "time":"20180120102010"},
+	{"label":"man", "x": "30", "y": "10", "width" : "30", "height" : "40", "time":"20180120112010"},
+
+	{"label":"man", "x": "20", "y": "30", "width" : "30", "height" : "40", "time":"20180120142010"},
+	{"label":"man", "x": "20", "y": "25", "width" : "30", "height" : "40", "time":"20180120132010"},
+	{"label":"man", "x": "20", "y": "20", "width" : "30", "height" : "40", "time":"20180120152010"},
+	{"label":"man", "x": "20", "y": "15", "width" : "30", "height" : "40", "time":"20180120162010"},
+	{"label":"man", "x": "20", "y": "10", "width" : "30", "height" : "40", "time":"20180120132010"}]}
+// 실시간으로 그려질 사각형 정보
+var rect_info = {"label":"man", "x": "10", "y": "20", "width" : "30", "height" : "40"};
+</script><p>
+
+<input type=button onclick="fnShowBarChart('aa', barRawData)" value="바 그래프"/>
+<input type=button onclick="fnShowPieChart('aa', pieRawData)" value="파이 그래프"/>
+<input type=button onclick="fnShowLineChart('aa', lineRawData)" value="꺾은선 그래프"/>
+<input type=button onclick="fnShowHeatMapChart('aa', heatMapRawData)" value="히트맵 그래프"/>
+
+<input type=button onclick="fnDrawRect('aa', '#1111111', rect_info)" value="Video"/>
+</body>
+</html>

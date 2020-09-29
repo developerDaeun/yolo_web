@@ -1,0 +1,18 @@
+다이제스트(digest): 단방향 해시를 통해 얻어낸 암호화된 패스워드
+salt: 단방향 해시 함수(ex.SHA256)에서 다이제스트를 생성할때 추가되는 
+      바이트단위의 임의의 문자열
+
+그누보드
+리액트
+
+**내가만든 class파일 import 하는 법
+1.Tomcat 폴더/conf/Catalina/localhost/ROOT.xml =>루트 경로
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antResourceLocking="false" privileged="true" useHttpOnly="true" docBase="C:\Users\Daeun\Desktop\lab\YOLO_WEB\splash" path="/" reloadable="false" />
+2.루트로 정한 경로에 WEB-INF\classes 파일 만들고 class파일 넣기
+
+/*
+**내가만든 class파일 import 하는 법
+1.catalina.properties 에서 경로 확인, 추가 가능
+2.루트로 정한 경로에 WEB-INF\classes 파일 만들고 class파일 넣기
+*/
